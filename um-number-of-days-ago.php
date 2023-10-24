@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Number of Days ago
  * Description:     Extension to Ultimate Member for display of dates in the Members Directory either as WP human time difference or only as number of days difference. A Shortcode for these time differences in the User Profile page.
- * Version:         1.0.0
+ * Version:         1.1.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -79,13 +79,26 @@ Class UM_Number_of_Days_ago {
     public function do_number_of_days_ago( $meta_key, $type_human_time_diff = 'WP' ) {
 
         $value = um_user( $meta_key );
+
         if ( ! is_numeric( $value )) {
-            $value = strtotime( $value );
+            $value = strtotime( str_replace( '/', '-', $value ));
         }
 
         if ( $type_human_time_diff == 'WP' ) {
 
-            $value = human_time_diff( $value, current_time( 'timestamp' ));
+            if ( $meta_key = 'birth_date' ) {
+
+                $diff = (int) abs( current_time( 'timestamp' ) - $value );
+
+                $value = 0;
+                if ( $diff >= YEAR_IN_SECONDS ) {
+                    $value = floor( $diff / YEAR_IN_SECONDS );
+                }
+
+            } else {
+
+                $value = human_time_diff( $value, current_time( 'timestamp' ));
+            }
 
             if ( empty( $this->um_meta_keys )) {
                 return $value;
