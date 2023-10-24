@@ -65,7 +65,7 @@ Class UM_Number_of_Days_ago {
                 if ( ! empty( $meta_keys )) {
 
                     foreach( $meta_keys as $meta_key ) {
-                        if ( isset( $data_array[$meta_key] )) {
+                        if ( isset( $data_array[$meta_key] ) && ! empty( $data_array[$meta_key] )) {
                             $data_array[$meta_key] = $this->do_number_of_days_ago( $meta_key, $type );
                         }
                     }
