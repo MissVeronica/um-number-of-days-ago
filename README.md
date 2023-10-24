@@ -20,6 +20,7 @@ Extension to Ultimate Member for display of dates in the Members Directory eithe
 1. https://developer.wordpress.org/reference/functions/human_time_diff/
 2. For meta_key <code>birth_date</code> addition of "old" and other meta_keys addition of "ago"when used in Members Directory.
 3. For Shortcode usage add your "old" or "ago" before/after the Shortcode as in the example above.
+4. WP is doing a round up of the values which will result in 1.7 being 2. This round up is not used for <code>birth_date</code> by this plugin.
 
 ## Updates
 1. Version 1.1.0 Excluded birth_date from WP human_time_diff and made the calculation of years in the plugin because of rounding up the value by WP.
