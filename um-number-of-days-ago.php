@@ -90,9 +90,9 @@ Class UM_Number_of_Days_ago {
 
                 $diff = (int) abs( current_time( 'timestamp' ) - $value );
 
-                $value = 0;
+                $value = 'less than one year';
                 if ( $diff >= YEAR_IN_SECONDS ) {
-                    $value = floor( $diff / YEAR_IN_SECONDS );
+                    $value = floor( $diff / YEAR_IN_SECONDS ) . ' years';
                 }
 
             } else {
