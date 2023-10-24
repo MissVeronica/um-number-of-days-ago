@@ -21,6 +21,9 @@ Extension to Ultimate Member for display of dates in the Members Directory eithe
 2. For meta_key <code>birth_date</code> addition of "old" and other meta_keys addition of "ago"when used in Members Directory.
 3. For Shortcode usage add your "old" or "ago" before/after the Shortcode as in the example above.
 
+## Updates
+1. Version 1.1.0 Excluded birth_date from WP human_time_diff and made the calculation of years in the plugin because of rounding up the value by WP.
+
 ## Installation
 1. Install by downloading the plugin ZIP file and install as a new Plugin, which you upload in WordPress -> Plugins -> Add New -> Upload Plugin.
 2. Activate the Plugin: Ultimate Member - Number of Days ago
