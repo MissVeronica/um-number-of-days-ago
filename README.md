@@ -24,6 +24,7 @@ Extension to Ultimate Member for display of dates in the Members Directory eithe
 
 ## Updates
 1. Version 1.1.0 Excluded birth_date from WP human_time_diff and made the calculation of years in the plugin because of rounding up the value by WP.
+2. Version 1.2.0 Updated the WP years old calculation.
 
 ## Installation
 1. Install by downloading the plugin ZIP file and install as a new Plugin, which you upload in WordPress -> Plugins -> Add New -> Upload Plugin.
